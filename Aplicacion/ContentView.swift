@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var alertIsVisible = false
     var body: some View {
         ZStack{
-            Color
-                ("BackgroundColor")
-                .ignoresSafeArea() // eliminar el margen superior
+            Color("BackgroundColor").ignoresSafeArea() // eliminar el margen superior
             VStack{
                 Text("🎯🎯🎯").font(.largeTitle)
                 Text("89")
@@ -27,12 +26,19 @@ struct ContentView: View {
                     Text("100").fontWeight(.bold)
                 }.padding(.horizontal)
                 
-                Button("TRY"){}
+                Button("TRY"){
+                    alertIsVisible = true
+                }
                     .padding()
                     .font(.title3)
                     .foregroundColor(.white)
-                    .background(Color.blue)
+                    .background(Color.accentColor)
                     .cornerRadius(21)
+                    .alert(isPresented: $alertIsVisible){
+                        Alert(title: Text("Hello"),
+                              message: Text("This is my first alert"),
+                              dismissButton: .default(Text("Got it")))
+                    }
             }// .background(Color()) --> acabar la proxima classe
         }
     }
