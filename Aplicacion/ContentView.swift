@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var game = Game()
+    
     @State private var alertIsVisible = false
     @State private var sliderValue = 50.0
     
@@ -16,20 +19,19 @@ struct ContentView: View {
             Color("BackgroundColor").ignoresSafeArea() // eliminar el margen superior
             
             VStack(spacing: 20) {
-                Text("🎯🎯🎯")
-                    .font(.largeTitle)
+                Text("🎯🎯🎯").font(.largeTitle)
+                    Text("\(game.guessNumber)")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .kerning(-1)
                 
-                Text("89")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .kerning(-1)
+                SliderView(value: $sliderValue, lowValue: Game.lowNumber, highValue: Game.highNumber)
                 
-                SliderView(value: $sliderValue, lowValue: 1, highValue: 100)
-                
-                Text("Slider value tracking \(Int(sliderValue))")
+                Text("Slider value tracking \(sliderValue)")
                 
                 Button("TRY") {
                     alertIsVisible = true
+                    self.game.calculatePoints(sliderValue: sliderValue)
                 }
                 .padding()
                 .font(.title3)
