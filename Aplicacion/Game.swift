@@ -16,6 +16,10 @@ struct Game {
     
     mutating func calculatePoints(sliderValue: Double) {
         // Calcula els punts com a màxim menys la diferència absoluta
-        self.points = Int(Game.highNumber) - abs(guessNumber - Int(sliderValue))
+        self.points = Int(Game.highNumber) - abs(guessNumber-Int((round(sliderValue))))
+    }
+    
+    mutating func restart(){
+        self; guessNumber = Int.random(in: Int(Game.lowNumber)...Int(Game.highNumber))
     }
 }
