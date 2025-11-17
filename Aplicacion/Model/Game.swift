@@ -13,13 +13,20 @@ struct Game {
     
     private(set) var guessNumber = Int.random(in: Int(lowNumber)...Int(highNumber))
     private(set) var points = 0
+    private(set) var score = 0
     
     mutating func calculatePoints(sliderValue: Double) {
         // Calcula els punts com a màxim menys la diferència absoluta
         self.points = Int(Game.highNumber) - abs(guessNumber-Int((round(sliderValue))))
+        self.score+=self.points
     }
     
     mutating func restart(){
-        self; guessNumber = Int.random(in: Int(Game.lowNumber)...Int(Game.highNumber))
+        self.guessNumber = Int.random(in: Int(Game.lowNumber)...Int(Game.highNumber))
+    }
+    
+    mutating func restartGame(){
+        self.guessNumber = Int.random(in: Int(Game.lowNumber)...Int(Game.highNumber))
+        self.score = 0
     }
 }
