@@ -13,7 +13,7 @@
 		EFF13C3E2EAFD240005B968F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFF13C3D2EAFD240005B968F /* Assets.xcassets */; };
 		EFF13C412EAFD240005B968F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFF13C402EAFD240005B968F /* Preview Assets.xcassets */; };
 		EFFAFA212ECB686600EF265A /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAFA202ECB686600EF265A /* BackgroundView.swift */; };
-		EFFAFA262ECB740000EF265A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAFA252ECB740000EF265A /* ViewModel.swift */; };
+		EFFAFA262ECB740000EF265A /* GameStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFAFA252ECB740000EF265A /* GameStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		EFF13C402EAFD240005B968F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EFF13C422EAFD240005B968F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFFAFA202ECB686600EF265A /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
-		EFFAFA252ECB740000EF265A /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		EFFAFA252ECB740000EF265A /* GameStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +89,7 @@
 		EFFAFA282ECB744F00EF265A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				EFFAFA252ECB740000EF265A /* ViewModel.swift */,
+				EFFAFA252ECB740000EF265A /* GameStore.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -171,7 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFFAFA262ECB740000EF265A /* ViewModel.swift in Sources */,
+				EFFAFA262ECB740000EF265A /* GameStore.swift in Sources */,
 				EFFAFA212ECB686600EF265A /* BackgroundView.swift in Sources */,
 				EFF13C3C2EAFD23F005B968F /* ContentView.swift in Sources */,
 				EF5A07D52EC243A300EB80D3 /* Game.swift in Sources */,

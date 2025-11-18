@@ -2,7 +2,7 @@ import SwiftUI
 
 struct BackgroundView: View {
     //@Binding var game:Game
-    @Environment var gameStore:GameStore
+    @EnvironmentObject var gameStore:GameStore
     
     var body: some View {
         ZStack {

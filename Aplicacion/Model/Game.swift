@@ -1,10 +1,3 @@
-//
-//  Game.swift
-//  Aplicacion
-//
-//  Created by alumne on 10/11/2025.
-//
-
 import Foundation
 
 struct Game {
