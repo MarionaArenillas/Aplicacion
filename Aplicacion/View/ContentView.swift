@@ -1,59 +1,57 @@
-//
-//  ContentView.swift
-//  Aplicacion
-//
-//  Created by alumne on 27/10/2025.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     
-    @State var game = Game()
-    @State private var alertIsVisible = false
-    @State private var sliderValue = (Game.highNumber - Game.lowNumber) / 2
+    //@State var game = Game()
+    @EnvironmentObject var gameStore:GameStore
+    
+    @State var alertIsVisible = false
+    @State var sliderValue = (Game.highNumber-Game.lowNumber) / 2
     
     var body: some View {
         ZStack {
-            BackgroundView(game: $game)
-            Color("BackgroundColor").ignoresSafeArea() // eliminar el margen superior
+            BackgroundView().ignoresSafeArea()
             
-            VStack(spacing: 20) {
+            VStack{
                 Text("🎯🎯🎯").font(.largeTitle)
-                    Text("\(game.guessNumber)")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .kerning(-1)
+                Text("\(gameStore.game.guessNumber)")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .kerning(-1)
                 
                 SliderView(value: $sliderValue, lowValue: Game.lowNumber, highValue: Game.highNumber)
                 
                 Text("Slider value tracking \(sliderValue)")
-                
                 Button("TRY") {
                     alertIsVisible = true
-                    self.game.calculatePoints(sliderValue: sliderValue)
+                    gameStore.calculatePoints(value: sliderValue)
+                    // self.game.calculatePoints(sliderValue: sliderValue)
+                    
                 }
                 .padding()
                 .font(.title3)
                 .foregroundColor(.white)
                 .background(Color.accentColor)
                 .cornerRadius(21)
-                .alert(isPresented: $alertIsVisible) {
-                    Alert(
-                        title: Text("Hello"),
-                        message: Text("This is my first alert"),
-                        dismissButton: .default(Text("Got it"))
-                    )
-                }
             }
-            .padding()
-        }
+        }.alert(isPresented: $alertIsVisible){
+            Alert(title: Text("Congratulations"),
+                  message: Text("Your points are \(gameStore.game.points)"),
+                  dismissButton: .default(Text("OK")){
+                    //game.restart()
+                    gameStore.restart()
+                    sliderValue = (Game.highNumber-Game.lowNumber)/2
+                  }
+            )
+         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView().environmentObject(GameStore())
+        }
     }
 }
 
