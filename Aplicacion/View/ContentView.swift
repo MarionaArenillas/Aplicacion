@@ -10,13 +10,12 @@ import SwiftUI
 struct ContentView: View {
     
     @State var game = Game()
-    
     @State private var alertIsVisible = false
-    @State private var sliderValue = (Game.highNumber-Game.lowNumber)/2
+    @State private var sliderValue = (Game.highNumber - Game.lowNumber) / 2
     
     var body: some View {
         ZStack {
-            IconModification(game:)
+            BackgroundView(game: $game)
             Color("BackgroundColor").ignoresSafeArea() // eliminar el margen superior
             
             VStack(spacing: 20) {

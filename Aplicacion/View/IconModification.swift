@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct BackgroundView: View {
-    let game: Game
+    @Binding var game: Game
     
     var body: some View {
         ZStack {
@@ -75,6 +75,6 @@ struct RoundedImageView: View {
 
 struct BackgroundView_Previews: PreviewProvider {
     static var previews: some View {
-        BackgroundView(game: Game())
+        BackgroundView(game: .constant(Game()))
     }
 }
