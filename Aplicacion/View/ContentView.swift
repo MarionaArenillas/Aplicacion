@@ -12,12 +12,16 @@ struct ContentView: View {
     // Valor inicial del slider (a la meitat del rang)
     @State var sliderValue = (Game.highNumber-Game.lowNumber) / 2
     
+    // Controlar si es veu la pantalla de marks
+    @State private var showMarks = false
+    
     var body: some View {
         ZStack {
             
             // Fons personalitzat de l'app
-            BackgroundView().ignoresSafeArea()
+            BackgroundView(showMarks: $showMarks).ignoresSafeArea()
             
+            // Pantalla principal del joc
             VStack{
                 Text("🎯🎯🎯").font(.largeTitle)
                 
@@ -44,6 +48,11 @@ struct ContentView: View {
                 .foregroundColor(.white)
                 .background(Color.accentColor)
                 .cornerRadius(21)
+            }
+            
+            // Segona panyalla: llista de millors puntuacions
+            if showMarks {
+                MarksView(showMarks: $showMarks)
             }
         }
         // Alerta que mostra els punts aconseguits
