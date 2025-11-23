@@ -26,7 +26,6 @@ struct ContentView: View {
                     alertIsVisible = true
                     gameStore.calculatePoints(value: sliderValue)
                     // self.game.calculatePoints(sliderValue: sliderValue)
-                    
                 }
                 .padding()
                 .font(.title3)

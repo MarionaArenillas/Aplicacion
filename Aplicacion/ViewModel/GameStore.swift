@@ -14,4 +14,5 @@ class GameStore: ObservableObject {
     func restart(){
         game.restart()
     }
+    
 }

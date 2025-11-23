@@ -21,7 +21,7 @@ struct BackgroundView: View {
                 HStack {
                     RoundedTextView(text: "SCORE", value: gameStore.game.score)
                     Spacer()
-                    RoundedTextView(text: "ROUND", value: 3)
+                    RoundedTextView(text: "ROUND", value: gameStore.game.rounds)
                 }
             }.padding()
         }
@@ -56,6 +56,6 @@ struct RoundedImageView: View {
 
 struct BackgroundView_Previews: PreviewProvider {
     static var previews: some View {
-        BackgroundView().environamentObject(GameStore())
+        BackgroundView().environmentObject(GameStore())
     }
 }
