@@ -1,4 +1,4 @@
-# Resultat
+# Resultat (Mariona Arenillas & Evelyn Aguayo)
 
 ![pantalla1](img/pantalla1.png)
 
