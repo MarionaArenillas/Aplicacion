@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		21B8702D2ED3A2EA003850FB /* Mark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B8702C2ED3A2DD003850FB /* Mark.swift */; };
+		21B8702F2ED3A7EF003850FB /* MarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B8702E2ED3A7E6003850FB /* MarksView.swift */; };
 		EF5A07D52EC243A300EB80D3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A07D42EC243A300EB80D3 /* Game.swift */; };
 		EFF13C3A2EAFD23F005B968F /* AplicacionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF13C392EAFD23F005B968F /* AplicacionApp.swift */; };
 		EFF13C3C2EAFD23F005B968F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF13C3B2EAFD23F005B968F /* ContentView.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		21B8702C2ED3A2DD003850FB /* Mark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mark.swift; sourceTree = "<group>"; };
+		21B8702E2ED3A7E6003850FB /* MarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarksView.swift; sourceTree = "<group>"; };
 		EF5A07D42EC243A300EB80D3 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		EFF13C362EAFD23F005B968F /* Aplicacion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aplicacion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFF13C392EAFD23F005B968F /* AplicacionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AplicacionApp.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 		EFFAFA232ECB6AC400EF265A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				21B8702E2ED3A7E6003850FB /* MarksView.swift */,
 				EFF13C3B2EAFD23F005B968F /* ContentView.swift */,
 				EFFAFA202ECB686600EF265A /* BackgroundView.swift */,
 			);
@@ -176,6 +179,7 @@
 			files = (
 				EFFAFA262ECB740000EF265A /* GameStore.swift in Sources */,
 				EFFAFA212ECB686600EF265A /* BackgroundView.swift in Sources */,
+				21B8702F2ED3A7EF003850FB /* MarksView.swift in Sources */,
 				21B8702D2ED3A2EA003850FB /* Mark.swift in Sources */,
 				EFF13C3C2EAFD23F005B968F /* ContentView.swift in Sources */,
 				EF5A07D52EC243A300EB80D3 /* Game.swift in Sources */,

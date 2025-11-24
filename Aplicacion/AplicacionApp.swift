@@ -1,3 +1,5 @@
+// Projecte creat per Evelyn Aguayo i Mariona Arenillas
+
 // TOKEN GITHUB --> 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
 
 import SwiftUI

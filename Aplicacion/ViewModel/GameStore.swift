@@ -14,11 +14,15 @@ class GameStore: ObservableObject {
     // Calcula els punts i avança la ronda.
     func calculatePoints(value: Double){
         game.calculatePoints(sliderValue: value)
+        registreCurrentMark()
     }
     
     // Guarda la puntuació actual com a marca i manté només les 5 millors
     private func registreCurrentMark(){
         let newMark = Mark(value: game.points, date: Date())
+        
+        // Afegir la marca a la llista
+        marks.append(newMark)
         
         // Ordena de més punts a menys
         marks.sort { $0.value > $1.value }

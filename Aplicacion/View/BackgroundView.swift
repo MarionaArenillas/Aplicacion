@@ -6,6 +6,9 @@ struct BackgroundView: View {
     // Accés al GameStore compartit per tota l'app (conté score, rouns...)
     @EnvironmentObject var gameStore:GameStore
     
+    // Binding per obrir/tancar la pantalla de marks
+    @Binding var showMarks:Bool
+    
     var body: some View {
         ZStack {
             // Color del fons personalitzat
@@ -19,8 +22,10 @@ struct BackgroundView: View {
                     
                     Spacer()
                     
-                    // Icona decorativa del menú
-                    RoundedImageView(imageName: "list.dash")
+                    // Botó que mostra la segona pantalla
+                    Button(action:{showMarks = true}) {
+                        RoundedImageView(imageName: "list.dash")
+                    }
                 }
                 
                 Spacer()
@@ -66,6 +71,6 @@ struct RoundedImageView: View {
 // Previsualització per XCode, no per l'app real. Permet veure com queda el fons i les targetes
 struct BackgroundView_Previews: PreviewProvider {
     static var previews: some View {
-        BackgroundView().environmentObject(GameStore())
+        BackgroundView(showMarks: .constant(false)).environmentObject(GameStore())
     }
 }
